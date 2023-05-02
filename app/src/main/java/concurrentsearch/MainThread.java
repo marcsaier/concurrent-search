@@ -9,6 +9,7 @@ import java.util.Random;
 public class MainThread {
 
     public static void main(String[] args) {
+        long startTime = System.nanoTime();
         try {
             int n = Integer.parseInt(args[0]);
             int x = Integer.parseInt(args[1]);
@@ -64,6 +65,10 @@ public class MainThread {
         catch (Exception e) {
             System.err.println("Bitte geben sie nur Werte als Argumente ein die zu Integers konvertiert werden können!");
         }
+        
+        long endTime = System.nanoTime();
+        long timeElapsed = endTime - startTime;
+        System.out.println("Execution time in milliseconds: " + timeElapsed / 1000000);
     }
 
     public static int getRandomNumber(int n) {
